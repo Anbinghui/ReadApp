@@ -25,7 +25,6 @@ public interface AppComponent {
     ActivityComponent activityComponent();
 
     Context getContext();
-
     Api getApi();
 
     @Named("java")
