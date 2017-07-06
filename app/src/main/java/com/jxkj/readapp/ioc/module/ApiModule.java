@@ -42,7 +42,7 @@ public class ApiModule {
     @Singleton
     @Provides
     protected Api provideApi(OkHttpClient okHttpClient) {
-        LogUtil.e("ioc", okHttpClient + "--->" + Thread.currentThread());
+      //  LogUtil.e("ioc", okHttpClient + "--->" + Thread.currentThread());
         return Api.getInstance(okHttpClient);
     }
 

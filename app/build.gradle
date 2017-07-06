@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'com.neenbedankt.android-apt'
-
+apply plugin: 'me.tatarka.retrolambda'
 
 
 
@@ -23,6 +23,10 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -61,7 +65,6 @@ dependencies {
     //recycler
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.1'
     compile 'jp.wasabeef:recyclerview-animators:2.2.5'
-    compile 'com.android.support:recyclerview-v7:24.2.0'
     //glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
     //jlog
@@ -75,5 +78,8 @@ dependencies {
 
 //    compile 'com.andriod.venders.cloudmall:alipaySDK-20150818:1.0.1'
 //    compile 'com.andriod.venders.cloudmall:bolts-android-1.2.0:1.0.1'
+    //webView处理
+    compile 'com.just.agentweb:agentweb:1.2.1'
+
 }
 
