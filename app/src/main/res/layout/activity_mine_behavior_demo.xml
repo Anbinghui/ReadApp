@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_mine_behavior_demo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jxkj.readapp.activity.MineBehaviorDemoActivity">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBg"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:elevation="0dp"
+        app:layout_behavior="@string/cool_overscroll_behavior"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:id="@+id/collBar"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            >
+            <include layout="@layout/layout_uc_head_bg" />
+
+            <include layout="@layout/layout_uc_head_middle" />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/titlebar_height"
+                android:alpha="0"
+                android:background="@android:color/white"
+                android:tag="toolbar"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/Widget.AppCompat.Toolbar"
+                >
+
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/rcl_mine"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</android.support.design.widget.CoordinatorLayout>

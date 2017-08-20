@@ -42,7 +42,7 @@ public class TestBean implements Serializable {
 
     public static List<TestBean> getDataList() {
         List<TestBean> list = new ArrayList<>();
-        for (int i=0;i<10;i++){
+        for (int i=0;i<20;i++){
             list.add(new TestBean("TestBean.this", ""));
         }
         return list;

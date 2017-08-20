@@ -28,12 +28,20 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+greendao {
+    schemaVersion 1
+    daoPackage 'com.anye.greendao.gen'
+    targetGenDir 'src/main/java'
+}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     testCompile 'junit:junit:4.12'
     //retrofit
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
@@ -56,6 +64,7 @@ dependencies {
     //base tool
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.jakewharton:butterknife:8.6.0'
+    apt 'com.jakewharton:butterknife-compiler:8.6.0'
     compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     //dialog
     //dialogUtil
@@ -72,7 +81,9 @@ dependencies {
     compile 'com.jiongbull:jlog:1.0.6'
     //中文转换成拼音
     compile 'com.belerweb:pinyin4j:2.5.1'
-
+    //photoView
+    compile 'com.github.chrisbanes:PhotoView:1.2.6'
+    compile 'com.android.support:design:22.2.1'
 
     compile project(':PullToRefresh')
 
@@ -80,6 +91,11 @@ dependencies {
 //    compile 'com.andriod.venders.cloudmall:bolts-android-1.2.0:1.0.1'
     //webView处理
     compile 'com.just.agentweb:agentweb:1.2.1'
+    //侧滑删除
+    compile "com.daimajia.swipelayout:library:1.2.0@aar"
+
+    //6.0动态权限
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.1@aar'
 
 }
 

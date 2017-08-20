@@ -3,11 +3,15 @@
     package="com.jxkj.readapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:name=".application.ReadApplication"
@@ -28,7 +32,20 @@
             android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop" />
-        <activity android:name=".activity.DemoActivity"></activity>
+        <activity android:name=".activity.DemoActivity" />
+        <activity
+            android:name=".activity.HooLiganActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/HooLiganStyle" />
+        <activity android:name=".activity.ColDemoActivity" />
+        <activity android:name=".activity.AppBarDemoActivity" />
+        <activity android:name=".activity.MineBehaviorDemoActivity" />
+        <activity android:name=".activity.ScanLocalBookActivity" />
+        <activity android:name=".activity.BookCaseListActivity"></activity>
     </application>
 
 </manifest>

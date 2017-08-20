@@ -8,6 +8,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:actionBarSize">48dp</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+
 
     </style>
 
@@ -15,6 +17,15 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+    </style>
+
+    //切换动画
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
     </style>
 
     <style name="toolBar">
@@ -28,6 +39,55 @@
 
         <item name="android:textSize">12sp</item>
     </style>
+    <style name="HooLiganStyle">
+        <item name="android:windowBackground">@color/colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoDisplay">false</item>
+        <item name="android:windowDisablePreview">true</item>
 
+    </style>
+    <!-- 等待对话框的样式 -->
+    <style name="LoadingDialog" parent="@android:style/Theme.Holo.DialogWhenLarge">
+
+        <!-- 背景颜色及透明程度 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否模糊 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowFrame">@null</item>
+    </style>
+    <style name="Theme.ToolBar.Menu" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- 设置-弹窗的背景-颜色-->
+        <item name="android:colorBackground">@color/common_bg</item>
+        <!-- 字体的颜色-->
+        <item name="android:textColor">@color/common_h1</item>
+        <!-- 字体大小-->
+        <item name="android:textSize">16sp</item>
+        <!-- 用于替换菜单的三个小白点，换成自已的图片-->
+        <item name="actionOverflowButtonStyle">@style/ActionButton.Overflow.Menu</item>
+        <!--用于控制menu弹出的位置，位于toolbar的下面，而不是上面-->
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+        <!-- 用于修改item默认的分割线-->
+        <item name="android:dropDownListViewStyle">@style/dropDownStyle</item>
+        <item name="dropDownListViewStyle">@style/dropDownStyle</item>
+    </style>
+    <style name="ActionButton.Overflow.Menu" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/mall_message</item>
+    </style>
+    <!--把该属性改为false即可使menu位置位于toolbar之下-->
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+    </style>
+
+    <!--用于修改popmenu的分割线-->
+    <style name="dropDownStyle" parent="android:style/Widget.Holo.ListView.DropDown">
+        <item name="android:listSelector">@drawable/touch_bg</item>
+        <item name="android:divider">@color/common_divider_narrow</item>
+        <item name="android:dividerHeight">0.5dp</item>
+    </style>
 
 </resources>
