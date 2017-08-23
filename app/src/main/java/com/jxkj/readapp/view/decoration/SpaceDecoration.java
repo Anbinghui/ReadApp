@@ -24,7 +24,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Gravity;
 import android.view.View;
 
-import com.justwayward.reader.view.recyclerview.adapter.RecyclerArrayAdapter;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 
 public class SpaceDecoration extends RecyclerView.ItemDecoration {
@@ -60,9 +60,9 @@ public class SpaceDecoration extends RecyclerView.ItemDecoration {
         int orientation = 0;
         int spanIndex = 0;
         int headerCount = 0,footerCount = 0;
-        if (parent.getAdapter() instanceof RecyclerArrayAdapter){
-            headerCount = ((RecyclerArrayAdapter) parent.getAdapter()).getHeaderCount();
-            footerCount = ((RecyclerArrayAdapter) parent.getAdapter()).getFooterCount();
+        if (parent.getAdapter() instanceof BaseQuickAdapter){
+            headerCount = ((BaseQuickAdapter) parent.getAdapter()).getHeaderLayoutCount();
+            footerCount = ((BaseQuickAdapter) parent.getAdapter()).getFooterLayoutCount();
         }
 
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();

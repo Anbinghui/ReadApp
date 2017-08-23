@@ -67,6 +67,7 @@ public class MainActivity extends BaseActivity {
         datas.add(new DemoBean(5,"appbar测试2"));
         datas.add(new DemoBean(6,"本地书籍"));
         datas.add(new DemoBean(7,"我的书架"));
+        datas.add(new DemoBean(8,"主会场测试"));
         rclMain.setLayoutManager(new LinearLayoutManager(this));
         adapter = new MainAdapter(datas);
         Log.i(TAG,datas.size()+"");
@@ -100,6 +101,10 @@ public class MainActivity extends BaseActivity {
                         break;
                     case 7:
                         startActivity(new Intent(mContext, BookCaseListActivity.class));
+                        break;
+                    case 8:
+                        String url1 = "  http://mall.jixiangkeji.com//wap/tmpl/mainVenueLt/index.html?q=1&amp;version=1.5.1&amp;con=app?con=app&sel_id=null&con=app&version=1.5.1&key=member1f57ac747e2531e6e5680fae879004b6";
+                        BaseWebActivity.jumpto(mContext,url1);
                         break;
                     default:
                         break;

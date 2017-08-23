@@ -26,5 +26,5 @@
         app:layout_scrollFlags="scroll|enterAlways"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/Theme.ToolBar.Menu"/>
+        android:theme="@style/toolBar"/>
 </merge>

@@ -57,6 +57,20 @@ public class StatusBarUtils {
 
     }
 
+
+    public static  void hideStatusBar(Activity activity,boolean isHide) {
+        if(isHide) {
+            WindowManager.LayoutParams layoutParams = activity.getWindow().getAttributes();
+            layoutParams.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
+            activity.getWindow().setAttributes(layoutParams);
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }else {
+            WindowManager.LayoutParams params = activity.getWindow().getAttributes();
+            params.flags &=WindowManager.LayoutParams.FLAG_FULLSCREEN;
+            activity.getWindow().setAttributes(params);
+        }
+    }
+
     public static void addMarginTopEqualStatusBarHeight(@NonNull View view, Context context) {
         if(view==null) {
             LogUtil.i("状态栏判断","view为空");

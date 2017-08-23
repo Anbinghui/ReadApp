@@ -27,6 +27,16 @@ public class CollectionBookBean  implements Serializable{
     private int chaptersCount;
     private String lastChapter;
     private String recentReadingTime;
+    private String encoding;
+
+    public String getEncoding() {
+        return encoding;
+    }
+
+    public void setEncoding(String encoding) {
+        this.encoding = encoding;
+    }
+
     public String getRecentReadingTime() {
         return this.recentReadingTime;
     }
@@ -129,12 +139,13 @@ public class CollectionBookBean  implements Serializable{
     public void set_id(String _id) {
         this._id = _id;
     }
-    @Generated(hash = 1112416040)
+    @Generated(hash = 855822281)
     public CollectionBookBean(String _id, String author, String cover,
             String shortIntro, String title, boolean hasCp, boolean isTop,
             boolean isSeleted, boolean showCheckBox, boolean isFromSD, String path,
             int latelyFollower, double retentionRatio, String updated,
-            int chaptersCount, String lastChapter, String recentReadingTime) {
+            int chaptersCount, String lastChapter, String recentReadingTime,
+            String encoding) {
         this._id = _id;
         this.author = author;
         this.cover = cover;
@@ -152,7 +163,9 @@ public class CollectionBookBean  implements Serializable{
         this.chaptersCount = chaptersCount;
         this.lastChapter = lastChapter;
         this.recentReadingTime = recentReadingTime;
+        this.encoding = encoding;
     }
+
     @Generated(hash = 1902107094)
     public CollectionBookBean() {
     }

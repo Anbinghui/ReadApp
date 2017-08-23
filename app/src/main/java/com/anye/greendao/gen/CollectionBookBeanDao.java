@@ -41,6 +41,7 @@ public class CollectionBookBeanDao extends AbstractDao<CollectionBookBean, Void>
         public final static Property ChaptersCount = new Property(14, int.class, "chaptersCount", false, "CHAPTERS_COUNT");
         public final static Property LastChapter = new Property(15, String.class, "lastChapter", false, "LAST_CHAPTER");
         public final static Property RecentReadingTime = new Property(16, String.class, "recentReadingTime", false, "RECENT_READING_TIME");
+        public final static Property Encoding = new Property(17, String.class, "encoding", false, "ENCODING");
     }
 
 
@@ -72,7 +73,8 @@ public class CollectionBookBeanDao extends AbstractDao<CollectionBookBean, Void>
                 "\"UPDATED\" TEXT," + // 13: updated
                 "\"CHAPTERS_COUNT\" INTEGER NOT NULL ," + // 14: chaptersCount
                 "\"LAST_CHAPTER\" TEXT," + // 15: lastChapter
-                "\"RECENT_READING_TIME\" TEXT);"); // 16: recentReadingTime
+                "\"RECENT_READING_TIME\" TEXT," + // 16: recentReadingTime
+                "\"ENCODING\" TEXT);"); // 17: encoding
     }
 
     /** Drops the underlying database table. */
@@ -137,6 +139,11 @@ public class CollectionBookBeanDao extends AbstractDao<CollectionBookBean, Void>
         if (recentReadingTime != null) {
             stmt.bindString(17, recentReadingTime);
         }
+ 
+        String encoding = entity.getEncoding();
+        if (encoding != null) {
+            stmt.bindString(18, encoding);
+        }
     }
 
     @Override
@@ -195,6 +202,11 @@ public class CollectionBookBeanDao extends AbstractDao<CollectionBookBean, Void>
         if (recentReadingTime != null) {
             stmt.bindString(17, recentReadingTime);
         }
+ 
+        String encoding = entity.getEncoding();
+        if (encoding != null) {
+            stmt.bindString(18, encoding);
+        }
     }
 
     @Override
@@ -221,7 +233,8 @@ public class CollectionBookBeanDao extends AbstractDao<CollectionBookBean, Void>
             cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13), // updated
             cursor.getInt(offset + 14), // chaptersCount
             cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15), // lastChapter
-            cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16) // recentReadingTime
+            cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16), // recentReadingTime
+            cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17) // encoding
         );
         return entity;
     }
@@ -245,6 +258,7 @@ public class CollectionBookBeanDao extends AbstractDao<CollectionBookBean, Void>
         entity.setChaptersCount(cursor.getInt(offset + 14));
         entity.setLastChapter(cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15));
         entity.setRecentReadingTime(cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16));
+        entity.setEncoding(cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17));
      }
     
     @Override

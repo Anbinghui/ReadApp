@@ -16,6 +16,15 @@ import java.util.Set;
 public class SpUtil {
     //更新apk
     public static final String DOWNLOAD_APK = "download_apk";
+    public static final String BOOK_INFO = "bookinfo";
+    public static final String BOOKBEGIN = "bookbegin";
+    public static final String BOOKEND = "bookend";
+    public static final String BOOK_MARK_END = "book_mark_end";
+    public static final String BOOK_MARK_BEGIN = "book_mark_begin";
+    public static final String BOOK_IS_NIGHT = "book_is_night";
+
+    //保存书籍的信息
+    public static final String FONTSIZE="fontsize";
 
     public static final String ACCOUNT_INFO = "account_info";
     public static final String IS_FIRST_TOUPDATEAGENT = "is_first_toupdateagent";// 跳转到填写资料ActivityDetailActivity
@@ -24,14 +33,8 @@ public class SpUtil {
     public static final String IS_FIRST_LOGIN = "is_first";
     public static final String IS_NEWVERSION = "is_newversion";
     public static final String USER_INFO = "user_info";
-    public static final String HOME_PAPER = "home_paper";
-    // 用于登录界面的预览头像功能
-    public static final String REVIEW_LOGO = "review_logo";
-    //用于登录界面预览用户名
-    public static final String REVIEW_NAME = "review_name";
-    public static final String NICK_NAME = "nick_name";
-    public static final String IS_FIRST_REVIEW = "is_first_review";
-    public static final String MOST_MONEY = "most_money";//店铺可提现最多的金额
+
+
     //用户基本信息
     public static final String TOKEN = "token";
     public static final String UID = "uid";

@@ -1,11 +1,14 @@
 package com.jxkj.readapp.activity;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.jxkj.readapp.R;
+import com.jxkj.readapp.activity.read.ReadActivity;
 import com.jxkj.readapp.adapter.BookCaseAdapter;
 import com.jxkj.readapp.bean.CollectionBookBean;
 import com.jxkj.readapp.common.base.BaseActivity;
@@ -28,11 +31,10 @@ public class BookCaseListActivity extends BaseActivity {
     @Override
     public void initToolBar() {
         mCommonToolbar.setTitle("我的书架");
-        mCommonToolbar.setNavigationIcon(R.drawable.ab_back);
         mCommonToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastUtils.makeShortText(mContext,"点击啊");
+                ToastUtils.makeShortText(mContext,"点击事件");
                 finish();
             }
         });
@@ -64,6 +66,20 @@ public class BookCaseListActivity extends BaseActivity {
 
     @Override
     public void initData() {
+        rclBookCase.addOnItemTouchListener(new OnItemClickListener() {
+            @Override
+            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+                CollectionBookBean bookBean = collectionBooks.get(position);
+                Intent intent = new Intent(mContext, ReadActivity.class);
+                intent.putExtra("book",bookBean);
+                startActivity(intent);
+            }
+        });
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dbManager.removeDB();
     }
 }

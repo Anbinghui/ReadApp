@@ -47,7 +47,6 @@ public class ScanLocalBookActivity extends BaseActivity {
     @Override
     public void initToolBar() {
         mCommonToolbar.setTitle("本地书籍");
-        mCommonToolbar.setNavigationIcon(R.drawable.ab_back);
         mCommonToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -173,5 +172,9 @@ public class ScanLocalBookActivity extends BaseActivity {
 
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dbManager.removeDB();
+    }
 }

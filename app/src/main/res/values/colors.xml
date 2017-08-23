@@ -23,4 +23,10 @@
     <color name="common_h3">#B2B2B2</color>
     <!--通用分割线细-->
     <color name="common_divider_narrow">#E3E3E3</color>
+
+
+    <color name="dayModeBackgroundColor">#FCECDF</color>
+    <color name="dayModeTextColor">#424242</color>
+    <color name="nightModeBackgroundColor">#424242</color>
+    <color name="nightModeTextColor">#E0E0E0</color>
 </resources>

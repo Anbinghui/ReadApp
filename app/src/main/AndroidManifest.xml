@@ -45,7 +45,8 @@
         <activity android:name=".activity.AppBarDemoActivity" />
         <activity android:name=".activity.MineBehaviorDemoActivity" />
         <activity android:name=".activity.ScanLocalBookActivity" />
-        <activity android:name=".activity.BookCaseListActivity"></activity>
+        <activity android:name=".activity.BookCaseListActivity" />
+        <activity android:name=".activity.read.ReadActivity"></activity>
     </application>
 
 </manifest>

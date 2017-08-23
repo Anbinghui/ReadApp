@@ -97,5 +97,8 @@ dependencies {
     //6.0动态权限
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.1@aar'
 
+    //progressbar
+    compile 'com.daimajia.numberprogressbar:library:1.4@aar'
+
 }
 
